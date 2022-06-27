@@ -6,9 +6,9 @@
 - This repository is composed by three main folders, `data` which contains scripts to download and prep the data for analysis, `analysis` which contains the code used to perform analysis on the machines I had available, and `results` which is mainly composed by graphs and scripts used to produce them.
 
 ## Notes to the team
-The first thing I noticed after downloading the vcf for the dataset was that the number of samples did not matched the description of the test. Particularly, the pdf file for the test mentions 575 samples while the vcf received contains 1575. 
+The first thing I noticed after downloading the vcf for the dataset was that the number of samples did not matched the description of the test. Particularly, the pdf file for the test mentions 575 samples while the vcf I received contains 1575. 
 
-For the sake of the test, I tried to figure out where the error was coming from and, by looking at the sample names, I've in mind that most likely the individual selection was not properly performed and most of the EAS and SAS samples from Gnomad's hgdp + 1k panel ended up in the vcf test dataset. 
+For the sake of the test, I tried to figure out where the error was coming from and, by looking at the sample names, I've in mind that most likely the command for individual selection was not properly performed and most of the EAS and SAS samples from Gnomad's hgdp + 1k panel ended up in the vcf test dataset. 
 
 Originally, I tried to avoid using that very same panel for the stratification analysis (admixture/structure) as duplicated data would cause  alarge bias in the analysis, however, due to some SNPs being called either at the hgdp or the 1k separatedly (I guess I could have also called the variants from the original bam files). I ended up using the same panel. On that note, accessing gnomad's data storage requires credentials, while Rodrigo was kind enough to install AWS CLI on the VM, he did not configure the iam user.
 
