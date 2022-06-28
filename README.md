@@ -10,9 +10,9 @@ The first thing I noticed after downloading the vcf for the dataset was that the
 
 For the sake of the test, I tried to figure out where the error was coming from and, by looking at the sample names, I've in mind that most likely the command for individual selection was not properly performed and most of the EAS and SAS samples from Gnomad's hgdp + 1k panel ended up in the vcf test dataset. 
 
-Originally, I tried to avoid using that very same panel for the stratification analysis (admixture/structure) as duplicated data would cause  alarge bias in the analysis, however, due to some SNPs being called either at the hgdp or the 1k separatedly (I guess I could have also called the variants from the original bam files). I ended up using the same panel. On that note, accessing gnomad's data storage requires credentials, while Rodrigo was kind enough to install AWS CLI on the VM, he did not configure the iam user.
+Originally, I tried to avoid using that very same panel for the stratification analysis (admixture/structure) as duplicated data would cause  a large bias, however, due to some SNPs being called either at the hgdp or the 1k separatedly (I guess I could have also called the variants from the original bam files). I ended up using the same panel and did tests on how the data would have look like with and withouth the duplicated individuals. On that note, accessing gnomad's data storage requires credentials, while Rodrigo was kind enough to install AWS CLI on the VM, he did not configure the iam user.
 
-Similarly, I considered that for the sake of the test, it would have been better to change the name of the vcf (the main answer for the first question was there) as well as the sample names, and so I did. Here's below simple code for data parsing to do so.
+Similarly, I considered that for the sake of the test, it would have been better to change the name of the vcf (the main answer for the first question was there even with its surprise elements) as well as the sample names. Here's below simple code for data parsing that I wrote to do so.
 
 ```
 ##Note head -n 5000 is only to process faster the command 
