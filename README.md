@@ -22,6 +22,8 @@ head -n 5000 grids-technical-test-datasets/gnomad.genomes.v3.1.hgdp_1kg.VBI2_PGS
 
 grep -v "#" grids-technical-test-datasets/gnomad.genomes.v3.1.hgdp_1kg.VBI2_PGS_vars.EAS_SAS_10AMR_samples.dense.vcf | cat Newheader - > grids-technical-test.vcf
 ```
+Finally, I also noticed that some of the selected SNPs in the vcf have a frequency of 0 (69 to be precise). They do not necesarilly skew the analysis, but unless that the dataset is combined with another reference population, these SNPs do not apport much to the analysis and even complicated a little bit the saturation tests. 
+
 All those points said, I think the test was fair and one week is more than enough for its completion thanks to the beefy virtual machine that you provide from amazon. Unfortunately, due to constrains with my free time and data downloads, I could not explore the exercises as much as I wanted nor provide more documentation than the minimum required (I though writting a small report in pdf with references and interpretation would have been nice), nonetheless, I hope you find my work or feedback usefull for the next time someone else has to perform this test.
 
 Cheers,
